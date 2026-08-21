@@ -28,32 +28,27 @@ html {
 
 
 body {
-    width: 100%;
+      width: 100%;
+    min-width: 0;
     min-height: 100vh;
 
-    background: #111111;
+    background: #08090b;
     color: #ffffff;
 
     font-family:
         -apple-system,
         BlinkMacSystemFont,
-        "SF Pro Text",
         "SF Pro Display",
+        "SF Pro",
         "Segoe UI",
         Roboto,
-        Helvetica,
-        Arial,
+        Inter,
         sans-serif;
 
-    font-size: 14px;
-    line-height: 1.5;
-
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
     overflow-x: hidden;
-
-    padding-bottom: 0;
 }
 
 
@@ -1268,10 +1263,10 @@ button {
 
     padding: 70px 0 90px;
 
-    background: #111111;
+    background: #ffffff;
 
     border-top:
-        1px solid #2b2b2b;
+        1px solid #2b2b2b2d;
 }
 
 
@@ -1287,7 +1282,7 @@ button {
 
     padding: 42px 50px;
 
-    background: #171717;
+    background: #ffffff0a;
 
     border:
         1px solid #2d2d2d;
@@ -1348,7 +1343,7 @@ button {
 
     font-weight: 600;
 
-    color: #ffffff;
+    color: #000000;
 }
 
 
@@ -1360,7 +1355,7 @@ button {
 
     line-height: 1.6;
 
-    color: #888888;
+    color: #000000;
 }
 
 
@@ -1378,9 +1373,9 @@ button {
 
     padding: 13px 17px;
 
-    background: #ffffff;
+    background: #000000;
 
-    color: #111111 !important;
+    color: #ffffff !important;
 
     text-decoration: none;
 
