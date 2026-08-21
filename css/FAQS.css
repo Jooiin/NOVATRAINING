@@ -35,23 +35,27 @@ html::-webkit-scrollbar-thumb:hover{
    ========================================================= */
 
 :root{
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
 
-    --black:#050505;
+    background: #08090b;
+    color: #ffffff;
 
-    --surface:#0b0b0b;
-    --surface-soft:#101010;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro",
+        "Segoe UI",
+        Roboto,
+        Inter,
+        sans-serif;
 
-    --white:#f5f5f7;
-    --text:#cfcfd4;
-    --muted:#85858b;
-    --muted-dark:#626268;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 
-    --blue:#00bfff;
-
-    --line:rgba(255,255,255,.09);
-    --line-soft:rgba(255,255,255,.055);
-
-    --radius:24px;
+    overflow-x: hidden;
 }
 
 
