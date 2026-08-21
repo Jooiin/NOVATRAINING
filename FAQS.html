@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#050505">
+
+    <meta name="description"
+          content="NOVA · Programas de entrenamiento online de natación, fuerza y HIT.">
+
+    <title>NOVA · Programas Online</title>
+
+
+    <!-- =====================================================
+         ICONOS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="css/FAQS.css">
+
+
+    <!-- =====================================================
+         CSS · PROGRAMAS
+         ===================================================== -->
+
+    <style>
+
+        /* =====================================================
+           PROGRAMAS NOVA
+        ===================================================== */
+
+        .nova-programs {
+            margin-top: 120px;
+            padding-top: 80px;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+
+        .nova-programs-heading {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+
+
+        .nova-programs-heading span {
+            display: block;
+            margin-bottom: 14px;
+            color: rgba(255,255,255,.38);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .18em;
+        }
+
+
+        .nova-programs-heading h2 {
+            margin: 0 0 18px;
+            color: #fff;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: .98;
+            letter-spacing: -.05em;
+        }
+
+
+        .nova-programs-heading p {
+            max-width: 620px;
+            margin: 0;
+            color: rgba(255,255,255,.5);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           GRID
+        ===================================================== */
+
+        .nova-program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .nova-program-card {
+            position: relative;
+            min-height: 420px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.018)
+                );
+
+            overflow: hidden;
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+
+        .nova-program-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,.2);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.075),
+                    rgba(255,255,255,.025)
+                );
+        }
+
+
+        /* =====================================================
+           RECOMENDADO
+        ===================================================== */
+
+        .nova-program-card.recommended {
+            border-color: rgba(255,255,255,.28);
+        }
+
+
+        .nova-program-recommended {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            padding: 7px 10px;
+
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 100px;
+
+            color: rgba(255,255,255,.7);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .14em;
+        }
+
+
+        /* =====================================================
+           CARD TOP
+        ===================================================== */
+
+        .nova-program-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 45px;
+        }
+
+
+        .nova-program-number {
+            color: rgba(255,255,255,.35);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+
+        .nova-program-discipline {
+            color: rgba(255,255,255,.42);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .nova-program-card h3 {
+            margin: 0 0 10px;
+            color: #fff;
+            font-size: clamp(27px, 3vw, 38px);
+            line-height: 1;
+            letter-spacing: -.045em;
+        }
+
+
+        .nova-program-card .program-subtitle {
+            margin: 0 0 18px;
+            color: rgba(255,255,255,.68);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+
+        .nova-program-card .program-description {
+            max-width: 470px;
+            margin: 0;
+            color: rgba(255,255,255,.43);
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .nova-program-features {
+            margin-top: 35px;
+            display: grid;
+            gap: 9px;
+        }
+
+
+        .nova-program-feature {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            padding-bottom: 9px;
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+
+        .nova-program-feature span {
+            color: rgba(255,255,255,.42);
+            font-size: 10px;
+        }
+
+
+        .nova-program-feature strong {
+            color: rgba(255,255,255,.72);
+            font-size: 11px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           ATENCIÓN
+        ===================================================== */
+
+        .nova-program-attention {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            margin-top: 25px;
+        }
+
+
+        .nova-program-attention span {
+            color: rgba(255,255,255,.32);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .15em;
+        }
+
+
+        .nova-program-dots {
+            color: #fff;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+
+        /* =====================================================
+           PRECIO
+        ===================================================== */
+
+        .nova-program-price {
+            margin-top: 25px;
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+
+        .nova-program-price small {
+            display: block;
+            margin-bottom: 6px;
+            color: rgba(255,255,255,.3);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .16em;
+        }
+
+
+        .nova-program-price strong {
+            color: #fff;
+            font-size: 25px;
+            letter-spacing: -.03em;
+        }
+
+
+        .nova-program-price em {
+            color: rgba(255,255,255,.32);
+            font-size: 9px;
+            font-style: normal;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .nova-programs {
+                margin-top: 80px;
+                padding-top: 55px;
+            }
+
+
+            .nova-program-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .nova-program-card {
+                min-height: auto;
+                padding: 25px;
+            }
+
+
+            .nova-program-top {
+                margin-bottom: 35px;
+            }
+
+
+            .nova-program-recommended {
+                position: static;
+                display: inline-block;
+                width: max-content;
+                margin-bottom: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <a href="programas.html"
+           class="logo">
+
+            NOVA SWIM
+            <span>COACH</span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="programas.html">
+            </a>
+
+            <a href="#programa">
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main class="program-container"
+          id="programa">
+
+
+        <!-- =================================================
+             INTRO
+             ================================================= -->
+
+        <section class="program-intro">
+
+            <span class="program-eyebrow">
+                NOVA · ENTRENAMIENTO ONLINE
+            </span>
+
+            <h1>
+                Entrena con estructura.
+                <br>
+                Evoluciona con intención.
+            </h1>
+
+            <p>
+                NOVA es un sistema de entrenamiento online que integra
+                natación, fuerza y HIT dentro de una estructura progresiva.
+                Cada programa está diseñado para adaptarse a diferentes
+                objetivos, niveles de experiencia y formas de entrenamiento,
+                con una planificación que busca desarrollar capacidades
+                de manera sostenible.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROGRAMAS NOVA
+             ================================================= -->
+
+
+
+
+
+        <!-- =================================================
+             FILOSOFÍA
+             ================================================= -->
+
+        <div class="program-block philosophy">
+
+            <p>
+                LA MEJORA NO ES INMEDIATA, ES PROGRESIVA.
+                LA CONSTANCIA Y LA PRECISIÓN CONSTRUYEN
+                RENDIMIENTO SOSTENIBLE.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COMPROMISO
+             ================================================= -->
+
+        <div class="program-block">
+
+            <h3>
+                COMPROMISO DEL ATLETA
+            </h3>
+
+            <p>
+                El progreso depende de la aplicación consciente
+                de la planificación y del cumplimiento de los
+                estímulos establecidos. Cada programa requiere
+                constancia, comunicación y disposición para
+                adaptarse al proceso.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PREGUNTAS FRECUENTES
+             ================================================= -->
+
+        <section class="faq-section"
+                 id="faq">
+
+            <div class="faq-heading">
+
+                <span>
+                    INFORMACIÓN
+                </span>
+
+                <h2>
+                    Preguntas frecuentes
+                </h2>
+
+            </div>
+
+
+            <div class="faq">
+
+
+                <!-- 01 -->
+
+                <details>
+
+                    <summary>
+                        <span>
+                            ¿Necesito experiencia para comenzar?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            No es indispensable. NOVA cuenta con
+                            diferentes estructuras de entrenamiento
+                            que pueden adaptarse a distintos niveles
+                            de experiencia y objetivos.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 02 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Qué disciplinas incluye NOVA?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            NOVA integra tres áreas de entrenamiento:
+                            natación, fuerza y HIT. Dependiendo del
+                            programa elegido, puedes trabajar una
+                            disciplina o combinar diferentes estímulos.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 03 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Puedo combinar natación con fuerza?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Sí. El programa POTENCIA combina natación
+                            y fuerza dentro de una misma estructura,
+                            buscando que ambas áreas trabajen de forma
+                            complementaria.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 04 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Qué programa debo elegir?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Depende de tu objetivo. EVOLUCIÓN está
+                            orientado al desarrollo de la natación;
+                            POTENCIA combina natación y fuerza;
+                            FUERA DEL AGUA integra HIT y fuerza;
+                            y FUERZA se centra exclusivamente en
+                            el desarrollo de fuerza.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 05 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Cómo se realiza el seguimiento?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            El nivel de seguimiento depende del
+                            programa contratado. Puede incluir
+                            comunicación directa, ajustes de
+                            entrenamiento, revisión del progreso
+                            y videollamadas de acuerdo con el nivel
+                            de atención correspondiente.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 06 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Se utilizan videollamadas?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Sí. Los programas que incluyen
+                            videollamadas cuentan con sesiones de
+                            seguimiento destinadas a revisar el
+                            proceso, resolver dudas y realizar los
+                            ajustes necesarios.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 07 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Cómo funciona el análisis de video?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            En los programas que incluyen análisis
+                            de video, se revisan aspectos técnicos
+                            del movimiento para identificar
+                            oportunidades de mejora y proporcionar
+                            correcciones específicas.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 08 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Puedo combinar el programa con mi entrenamiento actual?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Sí. La planificación puede considerar
+                            tu carga actual de entrenamiento para
+                            evitar estímulos innecesarios y mantener
+                            una progresión adecuada.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 09 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Qué pasa si no puedo cumplir todas las sesiones?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            El programa puede ajustarse cuando existen
+                            cambios en tu disponibilidad. Se priorizan
+                            los estímulos más importantes para mantener
+                            la continuidad del proceso.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 10 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Cómo se realizan los ajustes?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Los ajustes se realizan considerando tu
+                            evolución, cumplimiento, disponibilidad
+                            y respuesta al entrenamiento. El nivel
+                            de atención varía según el programa elegido.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 11 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Puedo cambiar de programa posteriormente?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Sí. Si tus objetivos cambian o necesitas
+                            un nivel diferente de acompañamiento,
+                            podemos valorar el cambio hacia otro
+                            programa de NOVA.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+
+                <!-- 12 -->
+
+                <details>
+
+                    <summary>
+
+                        <span>
+                            ¿Puede haber sesiones presenciales?
+                        </span>
+
+                        <i class="fa-solid fa-plus"
+                           aria-hidden="true"></i>
+
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Esto depende de varios factores, como
+                            la zona en donde resides, la disponibilidad,
+                            las condiciones de la instalación y
+                            el espacio disponible dentro de la agenda.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AVISO
+             ================================================= -->
+
+        <div class="program-block disclaimer">
+
+            <h3>
+                AVISO DE RESPONSABILIDAD
+            </h3>
+
+            <p>
+                Los programas tienen carácter formativo y de
+                entrenamiento. La práctica debe realizarse en
+                instalaciones adecuadas y siguiendo los protocolos
+                de seguridad correspondientes a cada actividad.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VOLVER
+             ================================================= -->
+
+        <div class="program-return">
+
+            <a href="programas.html"
+               class="btn-volver">
+
+                Volver
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+<footer class="athlete-footer">
+
+    <span>
+        NOVA · TRAINING
+    </span>
+
+    <small>
+        © 2026 NOVA · Todos los derechos reservados
+    </small>
+
+</footer>
+
+
+</body>
+
+</html>

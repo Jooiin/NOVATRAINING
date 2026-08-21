@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA SWIM</title>
+
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/programas.css"
+    >
+
+
+    <!-- =====================================================
+         FUENTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         SCROLL RESTORATION
+    ====================================================== -->
+
+    <script>
+
+        if ("scrollRestoration" in history) {
+
+            history.scrollRestoration = "manual";
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+
+    <!-- =================================================
+         LOGO · ENLACE A TRAINING
+    ================================================== -->
+
+    <a
+        href="training.html"
+        class="logo"
+        aria-label="NOVA SWIM COACH"
+    >
+
+        NOVA SWIM
+
+        <span>
+            COACH
+        </span>
+
+    </a>
+
+
+
+    <nav>
+
+
+        <!-- =================================================
+             SOBRE MÍ
+        ================================================== -->
+
+        <a
+            href="#"
+            id="openAbout"
+        >
+            Sobre mí
+        </a>
+
+
+        <div
+            class="about-overlay"
+            id="aboutModal"
+        >
+
+            <div class="about-panel">
+
+
+                <button
+                    type="button"
+                    id="closeAbout"
+                    aria-label="Cerrar Sobre mí"
+                >
+                    −
+                </button>
+
+
+                <div class="about-photo">
+
+                    <img
+                        src="img/perfil1.jpeg"
+                        alt="Alan Espinosa"
+                    >
+
+                </div>
+
+
+                <span>
+                    Alan Espinosa
+                </span>
+
+
+                <p>
+                    Coach en natación y aguas abiertas.
+                    Diseño procesos de entrenamiento personalizados para
+                    nadadores que buscan mejorar su técnica, eficiencia
+                    y rendimiento dentro del agua.
+
+                    A través de un método basado en análisis, progresión
+                    y control técnico, desarrollo nadadores más seguros,
+                    eficientes y conscientes de cada movimiento,
+                    creando mejoras sostenibles a largo plazo.
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MÉTODO
+        ================================================== -->
+
+        <a
+            href="#"
+            id="openMethod"
+        >
+            Método
+        </a>
+
+
+        <div
+            class="method-overlay"
+            id="methodModal"
+        >
+
+            <div class="method-panel">
+
+
+                <button
+                    type="button"
+                    id="closeMethod"
+                    aria-label="Cerrar Método"
+                >
+                    −
+                </button>
+
+
+                <span>
+                    NOVA SWIM · MÉTODO
+                </span>
+
+
+                <h2>
+                    Método
+                </h2>
+
+
+                <div class="cards">
+
+
+                    <!-- 01 -->
+
+                    <article class="card">
+
+                        <div class="card-top">
+
+                            <span>
+                                01
+                            </span>
+
+                            <small>
+                                ANÁLISIS
+                            </small>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h3>
+                                Diagnóstico Técnico
+                            </h3>
+
+
+                            <ul>
+
+                                <li>
+                                    Evaluación inicial de patrones de nado.
+                                </li>
+
+                                <li>
+                                    Análisis de alineación y posición corporal.
+                                </li>
+
+                                <li>
+                                    Identificación de pérdidas de eficiencia.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 02 -->
+
+                    <article class="card">
+
+                        <div class="card-top">
+
+                            <span>
+                                02
+                            </span>
+
+                            <small>
+                                ESTRUCTURA
+                            </small>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h3>
+                                Planificación Personalizada
+                            </h3>
+
+
+                            <ul>
+
+                                <li>
+                                    Microciclos estructurados semanalmente según objetivos y nivel del nadador.
+                                </li>
+
+                                <li>
+                                    Enfoque en eficiencia técnica, control del movimiento y optimización del rendimiento.
+                                </li>
+
+                                <li>
+                                    Progresión ajustada al nivel, capacidad y evolución individual del nadador.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 03 -->
+
+                    <article class="card">
+
+                        <div class="card-top">
+
+                            <span>
+                                03
+                            </span>
+
+                            <small>
+                                MECÁNICA
+                            </small>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h3>
+                                Optimización Mecánica
+                            </h3>
+
+
+                            <ul>
+
+                                <li>
+                                    Frecuencia y longitud de brazada.
+                                </li>
+
+                                <li>
+                                    Coordinación respiratoria.
+                                </li>
+
+                                <li>
+                                    Control bajo fatiga.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- 04 -->
+
+                    <article class="card">
+
+                        <div class="card-top">
+
+                            <span>
+                                04
+                            </span>
+
+                            <small>
+                                PROGRESIÓN
+                            </small>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h3>
+                                Seguimiento Estratégico
+                            </h3>
+
+
+                            <ul>
+
+                                <li>
+                                    Revisión semanal del progreso y respuesta al entrenamiento.
+                                </li>
+
+                                <li>
+                                    Ajustes progresivos según evolución, objetivos y necesidades del nadador.
+                                </li>
+
+                                <li>
+                                    Desarrollo de un rendimiento sostenible a largo plazo.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FAQS
+        ================================================== -->
+
+        <a href="FAQS.html">
+            FAQs
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <!-- =====================================================
+         PROGRAMAS
+    ====================================================== -->
+
+    <section
+        class="nova-programs"
+        id="programas"
+    >
+
+
+        <div class="nova-programs-heading">
+
+
+            <span>
+                NOVA · PROGRAMAS
+            </span>
+
+
+            <h2>
+                Encuentra tu
+                <br>
+                punto de partida.
+            </h2>
+
+
+            <p>
+                Cuatro formas de entrenar. Una misma metodología.
+                Elige el programa que mejor se adapte a lo que buscas
+                y al nivel de acompañamiento que necesitas.
+            </p>
+
+
+        </div>
+
+
+
+        <div class="nova-program-grid">
+
+
+            <!-- =================================================
+                 01 · EVOLUCIÓN
+            ================================================== -->
+
+            <article
+                class="nova-program-card"
+                data-program="NATACION"
+            >
+
+                <div>
+
+                    <div class="nova-program-top">
+
+                        <span class="nova-program-number">
+                            01 · EVOLUCIÓN
+                        </span>
+
+                        <span class="nova-program-discipline">
+                            Natación
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Evolución
+                    </h3>
+
+
+                    <p class="program-subtitle">
+                        Construye una base sólida.
+                    </p>
+
+
+                    <p class="program-description">
+                        Programa diseñado para quienes buscan
+                        desarrollar una base técnica, mejorar su
+                        confianza en el agua y avanzar mediante
+                        una estructura progresiva.
+                    </p>
+
+
+                    <div class="nova-program-features">
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                DISCIPLINA
+                            </span>
+
+                            <strong>
+                                Natación
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                PLAN
+                            </span>
+
+                            <strong>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                VIDEO
+                            </span>
+
+                            <strong>
+                                Análisis de video
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                AJUSTES
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                SEGUIMIENTO
+                            </span>
+
+                            <strong>
+                                Básico
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                LLAMADA
+                            </span>
+
+                            <strong>
+                                Periódica
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="nova-program-attention">
+
+                    <span>
+                        NIVEL DE ATENCIÓN
+                    </span>
+
+                    <div class="nova-program-dots">
+                        ●
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 02 · POTENCIA
+            ================================================== -->
+
+            <article
+                class="nova-program-card"
+                data-program="NATACION_FUERZA"
+            >
+
+                <div>
+
+
+                    <div class="nova-program-top">
+
+                        <span class="nova-program-number">
+                            02 · POTENCIA
+                        </span>
+
+                        <span class="nova-program-discipline">
+                            Natación + Fuerza
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Potencia
+                    </h3>
+
+
+                    <p class="program-subtitle">
+                        Lleva tu entrenamiento al siguiente nivel.
+                    </p>
+
+
+                    <p class="program-description">
+                        Programa estructurado para nadadores que
+                        buscan perfeccionar su técnica, mejorar su
+                        rendimiento y desarrollar fuerza mediante
+                        una planificación adaptada a sus objetivos.
+                    </p>
+
+
+                    <div class="nova-program-features">
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                DISCIPLINA
+                            </span>
+
+                            <strong>
+                                Natación + Fuerza
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                PLAN
+                            </span>
+
+                            <strong>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                VIDEO
+                            </span>
+
+                            <strong>
+                                Análisis de video
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                AJUSTES
+                            </span>
+
+                            <strong>
+                                ✓✓
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                SEGUIMIENTO
+                            </span>
+
+                            <strong>
+                                Continuo
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                LLAMADA
+                            </span>
+
+                            <strong>
+                                Frecuente
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="nova-program-attention">
+
+                    <span>
+                        NIVEL DE ATENCIÓN
+                    </span>
+
+                    <div class="nova-program-dots">
+                        ●●●
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 03 · FUERA DEL AGUA
+            ================================================== -->
+
+            <article
+                class="nova-program-card"
+                data-program="TERRESTRE"
+            >
+
+                <div>
+
+
+                    <div class="nova-program-top">
+
+                        <span class="nova-program-number">
+                            03 · FUERA DEL AGUA
+                        </span>
+
+                        <span class="nova-program-discipline">
+                            HIT + Fuerza
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Fuera del Agua
+                    </h3>
+
+
+                    <p class="program-subtitle">
+                        Desarrolla tu capacidad física.
+                    </p>
+
+
+                    <p class="program-description">
+                        Programa enfocado en desarrollar capacidad
+                        física mediante HIT y fuerza, con una
+                        estructura progresiva que acompañe tus
+                        objetivos de entrenamiento.
+                    </p>
+
+
+                    <div class="nova-program-features">
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                DISCIPLINA
+                            </span>
+
+                            <strong>
+                                HIT + Fuerza
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                PLAN
+                            </span>
+
+                            <strong>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                VIDEO
+                            </span>
+
+                            <strong>
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                AJUSTES
+                            </span>
+
+                            <strong>
+                                ✓
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                SEGUIMIENTO
+                            </span>
+
+                            <strong>
+                                Continuo
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                LLAMADA
+                            </span>
+
+                            <strong>
+                                Periódica
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="nova-program-attention">
+
+                    <span>
+                        NIVEL DE ATENCIÓN
+                    </span>
+
+                    <div class="nova-program-dots">
+                        ●●
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 04 · FUERZA
+            ================================================== -->
+
+            <article
+                class="nova-program-card"
+                data-program="FUERZA"
+            >
+
+                <div>
+
+
+                    <div class="nova-program-top">
+
+                        <span class="nova-program-number">
+                            04 · FUERZA
+                        </span>
+
+                        <span class="nova-program-discipline">
+                            Fuerza
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Fuerza
+                    </h3>
+
+
+                    <p class="program-subtitle">
+                        Entrena con estructura. Progresa con intención.
+                    </p>
+
+
+                    <p class="program-description">
+                        Programa centrado en desarrollar fuerza
+                        mediante una planificación progresiva,
+                        adaptada a tu nivel, disponibilidad y
+                        objetivos de entrenamiento.
+                    </p>
+
+
+                    <div class="nova-program-features">
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                DISCIPLINA
+                            </span>
+
+                            <strong>
+                                Fuerza
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                PLAN
+                            </span>
+
+                            <strong>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                VIDEO
+                            </span>
+
+                            <strong>
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                AJUSTES
+                            </span>
+
+                            <strong>
+                                ✓✓
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                SEGUIMIENTO
+                            </span>
+
+                            <strong>
+                                Personalizado
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-program-feature">
+
+                            <span>
+                                LLAMADA
+                            </span>
+
+                            <strong>
+                                Frecuente
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="nova-program-attention">
+
+                    <span>
+                        NIVEL DE ATENCIÓN
+                    </span>
+
+                    <div class="nova-program-dots">
+                        ●●●
+                    </div>
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="athlete-footer">
+
+    <span>
+        NOVA · TRAINING
+    </span>
+
+    <small>
+        © 2026 NOVA · Todos los derechos reservados
+    </small>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MODAL · ENCUESTA
+========================================================= -->
+
+<div
+    class="program-modal"
+    id="programModal"
+>
+
+
+    <div class="program-modal-box">
+
+
+        <!-- CERRAR -->
+
+        <button
+            type="button"
+            class="program-modal-close"
+            id="programModalClose"
+            aria-label="Cerrar"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+
+        <!-- =================================================
+             ENCUESTA
+        ================================================== -->
+
+        <div id="programSurvey">
+
+
+            <div class="program-survey-header">
+
+                <span
+                    class="program-survey-kicker"
+                    id="surveyKicker"
+                >
+                    NOVA · VALORACIÓN
+                </span>
+
+
+                <span
+                    class="program-survey-counter"
+                    id="surveyCounter"
+                >
+                    01 / 04
+                </span>
+
+            </div>
+
+
+
+            <div class="program-survey-progress">
+
+                <span
+                    id="surveyProgress"
+                ></span>
+
+            </div>
+
+
+
+            <div class="program-survey-content">
+
+
+                <span
+                    class="program-survey-label"
+                    id="surveyLabel"
+                >
+                    PREGUNTA 01
+                </span>
+
+
+                <h2 id="surveyQuestion">
+                    Cuéntanos un poco sobre tu entrenamiento actual.
+                </h2>
+
+
+                <p id="surveyDescription">
+                    Describe libremente cómo entrenas actualmente,
+                    qué haces en tus sesiones o cualquier detalle
+                    que consideres importante.
+                </p>
+
+
+
+                <div
+                    class="program-survey-options"
+                    id="surveyOptions"
+                ></div>
+
+
+
+                <div
+                    class="program-survey-textarea-wrap"
+                    id="surveyTextareaWrap"
+                >
+
+                    <textarea
+                        id="surveyTextarea"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Cuéntanos brevemente..."
+                    ></textarea>
+
+
+                    <span class="survey-textarea-counter">
+
+                        <span id="textareaCount">
+                            0
+                        </span>
+
+                        /500
+
+                    </span>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="program-survey-next"
+                    id="surveyNext"
+                    disabled
+                >
+
+                    CONTINUAR
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULTADO
+        ================================================== -->
+
+        <div
+            class="program-result"
+            id="programResult"
+        >
+
+
+            <div class="program-result-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+
+            <span class="program-survey-kicker">
+                PERFIL COMPLETADO
+            </span>
+
+
+            <h2 id="resultTitle">
+                Tenemos tu información.
+            </h2>
+
+
+            <p id="resultDescription">
+                Tus respuestas nos ayudarán a conocer mejor
+                tu proceso y continuar la conversación.
+            </p>
+
+
+
+            <div
+                class="program-recommendation"
+                id="programRecommendation"
+            >
+
+                <span>
+                    PLAN SELECCIONADO
+                </span>
+
+
+                <strong id="recommendedProgram">
+                    Evolución
+                </strong>
+
+            </div>
+
+
+
+            <button
+                type="button"
+                class="program-whatsapp"
+                id="programWhatsapp"
+            >
+
+                CONTINUAR POR WHATSAPP
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================================
+           ELEMENTOS
+        ===================================================== */
+
+        const modal =
+            document.getElementById("programModal");
+
+        const close =
+            document.getElementById("programModalClose");
+
+        const survey =
+            document.getElementById("programSurvey");
+
+        const result =
+            document.getElementById("programResult");
+
+        const kicker =
+            document.getElementById("surveyKicker");
+
+        const counter =
+            document.getElementById("surveyCounter");
+
+        const progress =
+            document.getElementById("surveyProgress");
+
+        const label =
+            document.getElementById("surveyLabel");
+
+        const question =
+            document.getElementById("surveyQuestion");
+
+        const description =
+            document.getElementById("surveyDescription");
+
+        const options =
+            document.getElementById("surveyOptions");
+
+        const textareaWrap =
+            document.getElementById("surveyTextareaWrap");
+
+        const textarea =
+            document.getElementById("surveyTextarea");
+
+        const textareaCount =
+            document.getElementById("textareaCount");
+
+        const next =
+            document.getElementById("surveyNext");
+
+        const whatsapp =
+            document.getElementById("programWhatsapp");
+
+        const recommendation =
+            document.getElementById("programRecommendation");
+
+        const recommendedProgram =
+            document.getElementById("recommendedProgram");
+
+        const resultTitle =
+            document.getElementById("resultTitle");
+
+        const resultDescription =
+            document.getElementById("resultDescription");
+
+
+        if (!modal) return;
+
+
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        const WHATSAPP =
+            "525612584271";
+
+
+
+        /* =====================================================
+           ESTADO
+        ===================================================== */
+
+        let currentProgram = null;
+
+        let currentQuestion = 0;
+
+        let answers = {};
+
+
+
+        /* =====================================================
+           PROGRAMAS
+        ===================================================== */
+
+        const programs = {
+
+            NATACION: {
+
+                key: "NATACION",
+
+                name: "Evolución",
+
+                selection: "NATACION",
+
+                discipline: "Natación"
+
+            },
+
+
+            NATACION_FUERZA: {
+
+                key: "NATACION_FUERZA",
+
+                name: "Potencia",
+
+                selection: "NATACION + FUERZA",
+
+                discipline: "Natación + Fuerza"
+
+            },
+
+
+            TERRESTRE: {
+
+                key: "TERRESTRE",
+
+                name: "Fuera del Agua",
+
+                selection: "TERRESTRE (HIT + FUERZA)",
+
+                discipline: "HIT + Fuerza"
+
+            },
+
+
+            FUERZA: {
+
+                key: "FUERZA",
+
+                name: "Fuerza",
+
+                selection: "TERRESTRE (FUERZA)",
+
+                discipline: "Fuerza"
+
+            }
+
+        };
+
+
+
+        /* =====================================================
+           FLUJOS POR PLAN
+        ===================================================== */
+
+        const surveyFlows = {
+
+
+            /* =================================================
+               NATACIÓN · EVOLUCIÓN
+            ================================================= */
+
+            NATACION: [
+
+                {
+
+                    question:
+                        "Cuéntanos un poco sobre tu entrenamiento actual.",
+
+                    description:
+                        "Describe libremente cómo entrenas actualmente, qué haces en tus sesiones o cualquier detalle que consideres importante.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Escribe cómo entrenas actualmente, qué haces en tus sesiones o cualquier detalle que quieras compartir."
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Cuántos días a la semana entrenas?",
+
+                    description:
+                        "Indica tu frecuencia habitual de entrenamiento.",
+
+                    options: [
+
+                        "1 día",
+                        "2 días",
+                        "3 días",
+                        "4 días",
+                        "5 días o más"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué distancia nadas actualmente por sesión?",
+
+                    description:
+                        "Indica aproximadamente cuánto nadas en una sesión habitual.",
+
+                    options: [
+
+                        "Menos de 1,000 m",
+                        "1,000 – 1,500 m",
+                        "1,500 – 2,000 m",
+                        "2,000 – 2,500 m",
+                        "Más de 2,500 m"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué buscas principalmente con este programa?",
+
+                    description:
+                        "Cuéntanos qué quieres conseguir o qué te gustaría desarrollar.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Escribe principalmente qué buscas con el programa y qué te gustaría conseguir."
+
+                }
+
+            ],
+
+
+
+            /* =================================================
+               NATACIÓN + FUERZA · POTENCIA
+            ================================================= */
+
+            NATACION_FUERZA: [
+
+                {
+
+                    question:
+                        "Cuéntanos un poco sobre tu entrenamiento actual.",
+
+                    description:
+                        "Describe libremente cómo entrenas actualmente y qué haces en tus sesiones.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos cómo entrenas actualmente y cómo distribuyes tus sesiones."
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Cuántos días a la semana entrenas?",
+
+                    description:
+                        "Indica tu frecuencia habitual de entrenamiento.",
+
+                    options: [
+
+                        "1 día",
+                        "2 días",
+                        "3 días",
+                        "4 días",
+                        "5 días o más"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué buscas principalmente con este programa?",
+
+                    description:
+                        "Selecciona lo que mejor representa lo que quieres desarrollar.",
+
+                    options: [
+
+                        "Una estructura semanal clara",
+
+                        "Correcciones para mejorar mi técnica",
+
+                        "Desarrollar fuerza fuera del agua",
+
+                        "Orientación para avanzar progresivamente"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué te gustaría mejorar en tu entrenamiento?",
+
+                    description:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+
+                }
+
+            ],
+
+
+
+            /* =================================================
+               TERRESTRE · FUERA DEL AGUA
+            ================================================= */
+
+            TERRESTRE: [
+
+                {
+
+                    question:
+                        "¿Cuántos días a la semana entrenas?",
+
+                    description:
+                        "Indica tu frecuencia habitual de entrenamiento.",
+
+                    options: [
+
+                        "1 día",
+                        "2 días",
+                        "3 días",
+                        "4 días",
+                        "5 días o más"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Actualmente entrenas o realizas alguna actividad física?",
+
+                    description:
+                        "Describe brevemente qué haces actualmente o si actualmente no entrenas.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos si actualmente entrenas, qué actividad realizas o si actualmente no entrenas."
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué esperas obtener de este programa?",
+
+                    description:
+                        "Selecciona lo que mejor representa lo que buscas.",
+
+                    options: [
+
+                        "Una estructura semanal clara",
+
+                        "Desarrollar mi capacidad física",
+
+                        "Mejorar mi condición general",
+
+                        "Orientación para avanzar progresivamente"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué te gustaría mejorar?",
+
+                    description:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+
+                }
+
+            ],
+
+
+
+            /* =================================================
+               TERRESTRE · FUERZA
+            ================================================= */
+
+            FUERZA: [
+
+                {
+
+                    question:
+                        "¿Cuántos días a la semana entrenas?",
+
+                    description:
+                        "Indica tu frecuencia habitual de entrenamiento.",
+
+                    options: [
+
+                        "1 día",
+                        "2 días",
+                        "3 días",
+                        "4 días",
+                        "5 días o más"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué buscas principalmente con este programa?",
+
+                    description:
+                        "Cuéntanos qué quieres conseguir o qué te gustaría desarrollar.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Escribe principalmente qué buscas con el programa y qué te gustaría conseguir."
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Tienes espacio para entrenar?",
+
+                    description:
+                        "Indica dónde realizarías principalmente tus sesiones.",
+
+                    options: [
+
+                        "Casa",
+
+                        "Parque",
+
+                        "Deportivo",
+
+                        "Casa y parque",
+
+                        "Casa y deportivo"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué te gustaría mejorar?",
+
+                    description:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+
+                }
+
+            ]
+
+        };
+
+
+
+        /* =====================================================
+           ABRIR ENCUESTA DESDE LAS TARJETAS
+        ===================================================== */
+
+        const programCards =
+            document.querySelectorAll(
+                ".nova-program-card[data-program]"
+            );
+
+
+        programCards.forEach(
+            function (card) {
+
+                card.addEventListener(
+                    "click",
+                    function () {
+
+                        const selectedProgram =
+                            card.dataset.program;
+
+
+                        openSurvey(
+                            selectedProgram
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ABRIR ENCUESTA
+        ===================================================== */
+
+        function openSurvey(
+            selectedProgram
+        ) {
+
+            currentProgram =
+                selectedProgram;
+
+            currentQuestion =
+                0;
+
+            answers =
+                {};
+
+
+            /*
+             * Guardamos automáticamente
+             * el programa seleccionado.
+             */
+
+            answers.plan =
+                programs[
+                    currentProgram
+                ].selection;
+
+
+            survey.style.display =
+                "block";
+
+
+            result.classList.remove(
+                "active"
+            );
+
+
+            recommendation.classList.remove(
+                "active"
+            );
+
+
+            modal.classList.add(
+                "active"
+            );
+
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+
+            /*
+             * Entramos directamente
+             * a la primera pregunta
+             * del programa elegido.
+             */
+
+            renderQuestion();
+
+        }
+
+
+
+        /* =====================================================
+           CERRAR MODAL
+        ===================================================== */
+
+        function closeModal() {
+
+            modal.classList.remove(
+                "active"
+            );
+
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        close.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+
+        /* =====================================================
+           CERRAR AL HACER CLICK FUERA
+        ===================================================== */
+
+        modal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ESCAPE
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    modal.classList.contains("active")
+                ) {
+
+                    closeModal();
+
+                }
+
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    const aboutModal =
+                        document.getElementById(
+                            "aboutModal"
+                        );
+
+                    const methodModal =
+                        document.getElementById(
+                            "methodModal"
+                        );
+
+
+                    if (aboutModal) {
+
+                        aboutModal.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+
+                    if (methodModal) {
+
+                        methodModal.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+
+                    document.body.classList.remove(
+                        "modal-open"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           RENDERIZAR PREGUNTA
+        ===================================================== */
+
+        function renderQuestion() {
+
+            const flow =
+                surveyFlows[
+                    currentProgram
+                ];
+
+
+            if (!flow) {
+
+                return;
+
+            }
+
+
+            const data =
+                flow[
+                    currentQuestion
+                ];
+
+
+            if (!data) {
+
+                return;
+
+            }
+
+
+            const total =
+                flow.length;
+
+
+            const number =
+                currentQuestion + 1;
+
+
+            const program =
+                programs[
+                    currentProgram
+                ];
+
+
+
+            /* =================================================
+               HEADER
+            ================================================= */
+
+            kicker.textContent =
+                program.name.toUpperCase()
+                +
+                " · VALORACIÓN";
+
+
+            counter.textContent =
+                String(number).padStart(
+                    2,
+                    "0"
+                )
+                +
+                " / "
+                +
+                String(total).padStart(
+                    2,
+                    "0"
+                );
+
+
+            progress.style.width =
+                (
+                    (number / total) *
+                    100
+                )
+                +
+                "%";
+
+
+            label.textContent =
+                "PREGUNTA "
+                +
+                String(number).padStart(
+                    2,
+                    "0"
+                );
+
+
+            question.textContent =
+                data.question;
+
+
+            description.textContent =
+                data.description;
+
+
+
+            /* =================================================
+               LIMPIAR
+            ================================================= */
+
+            options.innerHTML =
+                "";
+
+
+            textareaWrap.classList.remove(
+                "active"
+            );
+
+
+            textarea.value =
+                answers[
+                    `question_${number}`
+                ] || "";
+
+
+            textareaCount.textContent =
+                textarea.value.length;
+
+
+            next.disabled =
+                true;
+
+
+
+            /* =================================================
+               TEXTAREA
+            ================================================= */
+
+            if (
+                data.textarea
+            ) {
+
+                textareaWrap.classList.add(
+                    "active"
+                );
+
+
+                textarea.placeholder =
+                    data.placeholder ||
+                    "Cuéntanos brevemente...";
+
+
+                next.disabled =
+                    textarea.value.trim().length < 3;
+
+
+                next.innerHTML =
+                    currentQuestion ===
+                    total - 1
+
+                    ?
+
+                    `
+                    FINALIZAR
+                    <i class="fa-solid fa-check"></i>
+                    `
+
+                    :
+
+                    `
+                    CONTINUAR
+                    <i class="fa-solid fa-arrow-right"></i>
+                    `;
+
+
+                return;
+
+            }
+
+
+
+            /* =================================================
+               OPCIONES
+            ================================================= */
+
+            data.options.forEach(
+                function (optionText) {
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    button.type =
+                        "button";
+
+
+                    button.className =
+                        "program-option";
+
+
+                    if (
+                        answers[
+                            `question_${number}`
+                        ] === optionText
+                    ) {
+
+                        button.classList.add(
+                            "selected"
+                        );
+
+
+                        next.disabled =
+                            false;
+
+                    }
+
+
+                    button.innerHTML =
+                        `
+                        <span>
+                            ${optionText}
+                        </span>
+
+                        <i class="fa-solid fa-check"></i>
+                        `;
+
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            options
+                                .querySelectorAll(
+                                    ".program-option"
+                                )
+                                .forEach(
+                                    function (item) {
+
+                                        item.classList.remove(
+                                            "selected"
+                                        );
+
+                                    }
+                                );
+
+
+                            button.classList.add(
+                                "selected"
+                            );
+
+
+                            answers[
+                                `question_${number}`
+                            ] =
+                                optionText;
+
+
+                            next.disabled =
+                                false;
+
+                        }
+                    );
+
+
+                    options.appendChild(
+                        button
+                    );
+
+                }
+            );
+
+
+
+            /* =================================================
+               BOTÓN
+            ================================================= */
+
+            next.innerHTML =
+                currentQuestion ===
+                total - 1
+
+                ?
+
+                `
+                FINALIZAR
+                <i class="fa-solid fa-check"></i>
+                `
+
+                :
+
+                `
+                CONTINUAR
+                <i class="fa-solid fa-arrow-right"></i>
+                `;
+
+        }
+
+
+
+        /* =====================================================
+           TEXTAREA
+        ===================================================== */
+
+        textarea.addEventListener(
+            "input",
+            function () {
+
+                const value =
+                    textarea.value;
+
+
+                textareaCount.textContent =
+                    value.length;
+
+
+                answers[
+                    `question_${currentQuestion + 1}`
+                ] =
+                    value;
+
+
+                next.disabled =
+                    value.trim().length < 3;
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CONTINUAR / FINALIZAR
+        ===================================================== */
+
+        next.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    !currentProgram
+                ) {
+
+                    return;
+
+                }
+
+
+                const flow =
+                    surveyFlows[
+                        currentProgram
+                    ];
+
+
+                const answer =
+                    answers[
+                        `question_${currentQuestion + 1}`
+                    ];
+
+
+
+                /* =================================================
+                   VALIDAR
+                ================================================= */
+
+                if (
+                    !answer ||
+                    !String(answer).trim()
+                ) {
+
+                    return;
+
+                }
+
+
+
+                /* =================================================
+                   SIGUIENTE
+                ================================================= */
+
+                if (
+                    currentQuestion <
+                    flow.length - 1
+                ) {
+
+                    currentQuestion++;
+
+                    renderQuestion();
+
+                    return;
+
+                }
+
+
+
+                /* =================================================
+                   FINALIZAR
+                ================================================= */
+
+                finishSurvey();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           FINALIZAR ENCUESTA
+        ===================================================== */
+
+        function finishSurvey() {
+
+            const program =
+                programs[
+                    currentProgram
+                ];
+
+
+            survey.style.display =
+                "none";
+
+
+            result.classList.add(
+                "active"
+            );
+
+
+            recommendation.classList.add(
+                "active"
+            );
+
+
+            recommendedProgram.textContent =
+                program.name;
+
+
+            resultTitle.textContent =
+                "Tenemos tu información.";
+
+
+            resultDescription.textContent =
+                "Tus respuestas nos ayudarán a conocer mejor tu proceso y continuar la conversación.";
+
+        }
+
+
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        whatsapp.addEventListener(
+            "click",
+            function () {
+
+                const program =
+                    programs[
+                        currentProgram
+                    ];
+
+
+                const flow =
+                    surveyFlows[
+                        currentProgram
+                    ];
+
+
+                let message =
+`Hola Alan, estoy interesado en NOVA.
+
+MI PERFIL
+━━━━━━━━━━━━━━━━
+
+Plan:
+${program.selection}
+
+Programa:
+${program.name}
+
+Disciplina:
+${program.discipline}
+
+`;
+
+
+                flow.forEach(
+                    function (item, index) {
+
+                        const answer =
+                            answers[
+                                `question_${index + 1}`
+                            ] || "";
+
+
+                        if (!answer) {
+
+                            return;
+
+                        }
+
+
+                        message +=
+`
+${item.question}
+${answer}
+
+`;
+
+                    }
+                );
+
+
+                message +=
+`Me gustaría continuar con el siguiente paso.`;
+
+
+
+                const url =
+                    "https://wa.me/"
+                    +
+                    WHATSAPP
+                    +
+                    "?text="
+                    +
+                    encodeURIComponent(
+                        message
+                    );
+
+
+                window.open(
+                    url,
+                    "_blank"
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SOBRE MÍ
+        ===================================================== */
+
+        const openAbout =
+            document.getElementById(
+                "openAbout"
+            );
+
+
+        const closeAbout =
+            document.getElementById(
+                "closeAbout"
+            );
+
+
+        const aboutModal =
+            document.getElementById(
+                "aboutModal"
+            );
+
+
+        if (
+            openAbout &&
+            closeAbout &&
+            aboutModal
+        ) {
+
+            openAbout.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    aboutModal.classList.add(
+                        "active"
+                    );
+
+
+                    document.body.classList.add(
+                        "modal-open"
+                    );
+
+                }
+            );
+
+
+            closeAbout.addEventListener(
+                "click",
+                function () {
+
+                    aboutModal.classList.remove(
+                        "active"
+                    );
+
+
+                    document.body.classList.remove(
+                        "modal-open"
+                    );
+
+                }
+            );
+
+
+            aboutModal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target ===
+                        aboutModal
+                    ) {
+
+                        aboutModal.classList.remove(
+                            "active"
+                        );
+
+
+                        document.body.classList.remove(
+                            "modal-open"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           MÉTODO
+        ===================================================== */
+
+        const openMethod =
+            document.getElementById(
+                "openMethod"
+            );
+
+
+        const closeMethod =
+            document.getElementById(
+                "closeMethod"
+            );
+
+
+        const methodModal =
+            document.getElementById(
+                "methodModal"
+            );
+
+
+        if (
+            openMethod &&
+            closeMethod &&
+            methodModal
+        ) {
+
+            openMethod.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    methodModal.classList.add(
+                        "active"
+                    );
+
+
+                    document.body.classList.add(
+                        "modal-open"
+                    );
+
+                }
+            );
+
+
+            closeMethod.addEventListener(
+                "click",
+                function () {
+
+                    methodModal.classList.remove(
+                        "active"
+                    );
+
+
+                    document.body.classList.remove(
+                        "modal-open"
+                    );
+
+                }
+            );
+
+
+            methodModal.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target ===
+                        methodModal
+                    ) {
+
+                        methodModal.classList.remove(
+                            "active"
+                        );
+
+
+                        document.body.classList.remove(
+                            "modal-open"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>

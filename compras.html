@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NOVA · Tienda</title>
+
+
+<style>
+
+/* =========================================================
+   NOVA
+   TIENDA — STYLE
+   DESKTOP / TABLET / MOBILE
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+
+    overflow-x: hidden;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #f5f5f3;
+    color: #111;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "SF Pro Display",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --black: #111111;
+    --white: #ffffff;
+
+    --background: #f5f5f3;
+
+    --line: #dededb;
+
+    --gray: #777774;
+    --gray-light: #999995;
+
+    --max-width: 1280px;
+
+    --side-padding: 40px;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.page-container {
+
+    width:
+        min(
+            calc(100% - (var(--side-padding) * 2)),
+            var(--max-width)
+        );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5000;
+
+    width: 100%;
+
+    background:
+        rgba(245,245,243,.90);
+
+    border-bottom:
+        1px solid rgba(0,0,0,.07);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+.header-inner {
+
+    width:
+        min(
+            calc(100% - (var(--side-padding) * 2)),
+            var(--max-width)
+        );
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    color: #111;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.1px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   INICIO
+========================================================= */
+
+.home-link {
+
+    position: relative;
+
+    padding: 8px 0;
+
+    color: #666;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: .9px;
+
+    transition:
+        color .2s ease;
+}
+
+
+.home-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 1px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: #111;
+
+    transition:
+        width .2s ease;
+}
+
+
+.home-link:hover {
+
+    color: #111;
+}
+
+
+.home-link:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   TIENDA
+========================================================= */
+
+.store-page {
+
+    min-height:
+        calc(100svh - 72px);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.store-main {
+
+    flex: 1;
+
+    width: 100%;
+
+    padding:
+        120px 0
+        140px;
+}
+
+
+/* =========================================================
+   BLOQUE TIENDA
+========================================================= */
+
+.store-content {
+
+    max-width: 760px;
+}
+
+
+/* =========================================================
+   PRÓXIMAMENTE
+========================================================= */
+
+.store-coming {
+
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.store-content h1 {
+
+    color: #111;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            76px
+        );
+
+    line-height: .98;
+
+    letter-spacing: -3.8px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.store-category {
+
+    margin-top: 28px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+
+.store-description {
+
+    max-width: 480px;
+
+    margin-top: 18px;
+
+    color: #686865;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LÍNEA
+========================================================= */
+
+.store-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 70px;
+
+    background: #dededb;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+
+    width: 100%;
+
+    background: #11111100;
+
+    color: #777;
+}
+
+
+.footer-inner {
+
+    width:
+        min(
+            calc(100% - (var(--side-padding) * 2)),
+            var(--max-width)
+        );
+
+    min-height: 90px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .9px;
+}
+
+
+.footer-brand {
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: -.4px;
+}
+
+
+.footer-copy {
+
+    color: #777;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .9px;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    :root {
+        --side-padding: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+        --side-padding: 28px;
+    }
+
+
+    .header-inner {
+
+        min-height: 68px;
+    }
+
+
+    .store-main {
+
+        padding:
+            100px 0
+            110px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .page-container {
+
+        width:
+            calc(100% - 48px);
+    }
+
+
+    .header-inner {
+
+        width:
+            calc(100% - 48px);
+    }
+
+
+    .store-content {
+
+        max-width: 680px;
+    }
+
+
+    .store-content h1 {
+
+        font-size:
+            clamp(
+                50px,
+                9vw,
+                70px
+            );
+
+        letter-spacing: -3.2px;
+    }
+
+
+    .store-category {
+
+        max-width: 600px;
+
+        line-height: 1.4;
+    }
+
+
+    .store-description {
+
+        max-width: 500px;
+
+        font-size: 14px;
+    }
+
+
+    .footer-inner {
+
+        width:
+            calc(100% - 48px);
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+
+        --side-padding: 18px;
+    }
+
+
+    html {
+
+        width: 100%;
+
+        min-height: 100%;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+    }
+
+
+    body {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       CONTENEDOR
+    ===================================================== */
+
+    .page-container {
+
+        width:
+            calc(100% - 36px);
+
+        max-width: none;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+
+        position: sticky;
+
+        top: 0;
+
+        width: 100%;
+
+        z-index: 5000;
+    }
+
+
+    .header-inner {
+
+        width:
+            calc(100% - 36px);
+
+        min-height: 62px;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+
+    .brand {
+
+        font-size: 20px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .home-link {
+
+        flex-shrink: 0;
+
+        padding: 8px 0;
+
+        font-size: 8px;
+
+        letter-spacing: .9px;
+    }
+
+
+    /* =====================================================
+       PÁGINA
+    ===================================================== */
+
+    .store-page {
+
+        width: 100%;
+
+        min-height:
+            calc(100svh - 62px);
+
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       CONTENIDO
+    ===================================================== */
+
+    .store-main {
+
+        width: 100%;
+
+        flex: 1;
+
+        padding:
+            72px 0
+            78px;
+
+        display: block;
+    }
+
+
+    .store-content {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       NOVA · STORE
+    ===================================================== */
+
+    .store-coming {
+
+        display: block;
+
+        margin-bottom: 20px;
+
+        font-size: 8px;
+
+        line-height: 1.3;
+
+        letter-spacing: 1.5px;
+
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+
+    .store-content h1 {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                62px
+            );
+
+        line-height: .95;
+
+        letter-spacing: -2.8px;
+
+        overflow-wrap: normal;
+
+        word-break: normal;
+    }
+
+
+    /* =====================================================
+       CATEGORÍA
+    ===================================================== */
+
+    .store-category {
+
+        width: 100%;
+
+        max-width: 340px;
+
+        margin-top: 25px;
+
+        font-size: 8px;
+
+        line-height: 1.45;
+
+        letter-spacing: 1.35px;
+
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       DESCRIPCIÓN
+    ===================================================== */
+
+    .store-description {
+
+        width: 100%;
+
+        max-width: 320px;
+
+        margin-top: 16px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       LÍNEA
+    ===================================================== */
+
+    .store-line {
+
+        width: 100%;
+
+        height: 1px;
+
+        margin-top: 52px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .site-footer {
+
+        width: 100%;
+
+        flex-shrink: 0;
+    }
+
+
+    .footer-inner {
+
+        width:
+            calc(100% - 36px);
+
+        min-height: 92px;
+
+        margin: 0 auto;
+
+        padding:
+            20px 0;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+
+    .footer-brand {
+
+        font-size: 11px;
+
+        line-height: 1;
+    }
+
+
+    .footer-copy {
+
+        max-width: 100%;
+
+        font-size: 7px;
+
+        line-height: 1.5;
+
+        letter-spacing: .65px;
+    }
+
+}
+
+
+/* =========================================================
+   IPHONE / ANDROID
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .page-container {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    .header-inner {
+
+        width:
+            calc(100% - 32px);
+
+        min-height: 60px;
+    }
+
+
+    .brand {
+
+        font-size: 20px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .home-link {
+
+        font-size: 8px;
+    }
+
+
+    .store-page {
+
+        min-height:
+            calc(100svh - 60px);
+    }
+
+
+    .store-main {
+
+        padding:
+            68px 0
+            72px;
+    }
+
+
+    .store-content h1 {
+
+        font-size:
+            clamp(
+                40px,
+                12.5vw,
+                58px
+            );
+
+        line-height: .96;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .store-category {
+
+        max-width: 300px;
+
+        margin-top: 23px;
+
+        line-height: 1.5;
+    }
+
+
+    .store-description {
+
+        max-width: 300px;
+
+        font-size: 13px;
+    }
+
+
+    .store-line {
+
+        margin-top: 48px;
+    }
+
+
+    .footer-inner {
+
+        width:
+            calc(100% - 32px);
+
+        min-height: 88px;
+
+        padding:
+            18px 0;
+    }
+
+}
+
+
+/* =========================================================
+   IPHONE PEQUEÑO
+========================================================= */
+
+@media (max-width: 375px) {
+
+    .page-container {
+
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .header-inner {
+
+        width:
+            calc(100% - 28px);
+
+        min-height: 58px;
+    }
+
+
+    .brand {
+
+        font-size: 19px;
+    }
+
+
+    .home-link {
+
+        font-size: 7.5px;
+
+        letter-spacing: .8px;
+    }
+
+
+    .store-page {
+
+        min-height:
+            calc(100svh - 58px);
+    }
+
+
+    .store-main {
+
+        padding:
+            62px 0
+            68px;
+    }
+
+
+    .store-coming {
+
+        margin-bottom: 18px;
+
+        font-size: 7.5px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .store-content h1 {
+
+        font-size: 40px;
+
+        line-height: .96;
+
+        letter-spacing: -2.3px;
+    }
+
+
+    .store-category {
+
+        margin-top: 21px;
+
+        max-width: 280px;
+
+        font-size: 7.5px;
+
+        line-height: 1.5;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .store-description {
+
+        margin-top: 15px;
+
+        max-width: 280px;
+
+        font-size: 12.5px;
+    }
+
+
+    .store-line {
+
+        margin-top: 45px;
+    }
+
+
+    .footer-inner {
+
+        width:
+            calc(100% - 28px);
+
+        min-height: 82px;
+
+        padding:
+            16px 0;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MÓVIL
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .store-main {
+
+        padding:
+            60px 0
+            70px;
+    }
+
+
+    .store-content h1 {
+
+        font-size:
+            clamp(
+                42px,
+                8vw,
+                60px
+            );
+    }
+
+}
+
+
+/* =========================================================
+   SAFE AREA — IPHONE
+========================================================= */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+
+    @media (max-width: 600px) {
+
+        .footer-inner {
+
+            padding-bottom:
+                calc(
+                    18px +
+                    env(safe-area-inset-bottom)
+                );
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   PANTALLAS MUY GRANDES
+========================================================= */
+
+@media (min-width: 1800px) {
+
+    .page-container {
+
+        max-width: 1450px;
+    }
+
+
+    .header-inner {
+
+        max-width: 1450px;
+    }
+
+
+    .footer-inner {
+
+        max-width: 1450px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCIR MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto !important;
+    }
+
+
+    * {
+
+        transition-duration:
+            .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            href=""
+            class="brand"
+        >
+            NOVA
+        </a>
+
+
+        <a
+            href="index.html"
+            class="home-link"
+        >
+            INICIO
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     TIENDA
+========================================================= -->
+
+<main class="store-page">
+
+
+    <section class="store-main">
+
+        <div class="page-container">
+
+
+            <div class="store-content">
+
+
+                <span class="store-coming">
+                    NOVA · STORE
+                </span>
+
+
+                <h1>
+                    PRÓXIMAMENTE
+                </h1>
+
+
+                <div class="store-category">
+                    Productos NOVA para acompañar tu entrenamiento
+                </div>
+
+
+                <p class="store-description">
+                    ·
+                </p>
+
+
+                <div class="store-line"></div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <span class="footer-brand">
+                NOVA
+            </span>
+
+            <small class="footer-copy">
+                © 2026 NOVA · Todos los derechos reservados
+            </small>
+
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+
+</body>
+
+</html>
