@@ -1040,6 +1040,28 @@
 
         </div>
 
+
+
+        <!-- =================================================
+             BOTÓN · COMENZAR
+        ================================================== -->
+
+        <div class="nova-program-start">
+
+            <button
+                type="button"
+                id="startSurvey"
+            >
+
+                COMENZAR
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
     </section>
 
 
@@ -1086,7 +1108,9 @@
             id="programModalClose"
             aria-label="Cerrar"
         >
+
             <i class="fa-solid fa-xmark"></i>
+
         </button>
 
 
@@ -1112,7 +1136,7 @@
                     class="program-survey-counter"
                     id="surveyCounter"
                 >
-                    01 / 04
+                    01 / 03
                 </span>
 
             </div>
@@ -1141,14 +1165,12 @@
 
 
                 <h2 id="surveyQuestion">
-                    Cuéntanos un poco sobre tu entrenamiento actual.
+                    ¿Qué tipo de entrenamiento realizas actualmente?
                 </h2>
 
 
                 <p id="surveyDescription">
-                    Describe libremente cómo entrenas actualmente,
-                    qué haces en tus sesiones o cualquier detalle
-                    que consideres importante.
+                    Puedes seleccionar más de una opción.
                 </p>
 
 
@@ -1159,6 +1181,41 @@
                 ></div>
 
 
+
+                <!-- =================================================
+                     OTRO
+                ================================================== -->
+
+                <div
+                    class="program-survey-textarea-wrap"
+                    id="otherTextareaWrap"
+                >
+
+                    <textarea
+                        id="otherTextarea"
+                        rows="4"
+                        maxlength="300"
+                        placeholder="Describe brevemente..."
+                    ></textarea>
+
+
+                    <span class="survey-textarea-counter">
+
+                        <span id="otherTextareaCount">
+                            0
+                        </span>
+
+                        /300
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RESPUESTA ABIERTA
+                ================================================== -->
 
                 <div
                     class="program-survey-textarea-wrap"
@@ -1253,7 +1310,7 @@
 
 
                 <strong id="recommendedProgram">
-                    Evolución
+                    —
                 </strong>
 
             </div>
@@ -1303,6 +1360,9 @@ document.addEventListener(
         const close =
             document.getElementById("programModalClose");
 
+        const startSurvey =
+            document.getElementById("startSurvey");
+
         const survey =
             document.getElementById("programSurvey");
 
@@ -1338,6 +1398,15 @@ document.addEventListener(
 
         const textareaCount =
             document.getElementById("textareaCount");
+
+        const otherTextareaWrap =
+            document.getElementById("otherTextareaWrap");
+
+        const otherTextarea =
+            document.getElementById("otherTextarea");
+
+        const otherTextareaCount =
+            document.getElementById("otherTextareaCount");
 
         const next =
             document.getElementById("surveyNext");
@@ -1375,11 +1444,11 @@ document.addEventListener(
            ESTADO
         ===================================================== */
 
-        let currentProgram = null;
-
         let currentQuestion = 0;
 
         let answers = {};
+
+        let selectedPlan = null;
 
 
 
@@ -1395,7 +1464,7 @@ document.addEventListener(
 
                 name: "Evolución",
 
-                selection: "NATACION",
+                selection: "NATACIÓN",
 
                 discipline: "Natación"
 
@@ -1408,7 +1477,7 @@ document.addEventListener(
 
                 name: "Potencia",
 
-                selection: "NATACION + FUERZA",
+                selection: "NATACIÓN + FUERZA",
 
                 discipline: "Natación + Fuerza"
 
@@ -1421,7 +1490,7 @@ document.addEventListener(
 
                 name: "Fuera del Agua",
 
-                selection: "TERRESTRE (HIT + FUERZA)",
+                selection: "HIT + FUERZA",
 
                 discipline: "HIT + Fuerza"
 
@@ -1434,7 +1503,7 @@ document.addEventListener(
 
                 name: "Fuerza",
 
-                selection: "TERRESTRE (FUERZA)",
+                selection: "FUERZA",
 
                 discipline: "Fuerza"
 
@@ -1445,14 +1514,99 @@ document.addEventListener(
 
 
         /* =====================================================
-           FLUJOS POR PLAN
+           PREGUNTAS GENERALES
         ===================================================== */
 
-        const surveyFlows = {
+        const generalQuestions = [
+
+            {
+
+                id: "general_training",
+
+                question:
+                    "¿Qué tipo de entrenamiento realizas actualmente?",
+
+                description:
+                    "Puedes seleccionar más de una opción.",
+
+                multi:
+                    true,
+
+                options: [
+
+                    "Natación",
+                    "Fuerza",
+                    "Acondicionamiento",
+                    "Carrera",
+                    "Otro",
+                    "Actualmente no realizo entrenamiento"
+
+                ]
+
+            },
+
+
+            {
+
+                id: "general_days",
+
+                question:
+                    "¿Cuántos días a la semana entrenas actualmente?",
+
+                description:
+                    "Indica tu frecuencia habitual de entrenamiento.",
+
+                options: [
+
+                    "1 día",
+                    "2 días",
+                    "3 días",
+                    "4 días",
+                    "5 días o más",
+                    "Actualmente no entreno"
+
+                ]
+
+            },
+
+
+            {
+
+                id: "general_plan",
+
+                question:
+                    "¿Qué plan se acomoda a lo que buscas?",
+
+                description:
+                    "Selecciona el programa que mejor representa lo que buscas.",
+
+                options: [
+
+                    "Natación",
+                    "Natación + Fuerza",
+                    "HIT + Fuerza",
+                    "Fuerza"
+
+                ],
+
+                planSelection:
+                    true
+
+            }
+
+        ];
+
+
+
+        /* =====================================================
+           PREGUNTAS POR PLAN
+        ===================================================== */
+
+        const planQuestions = {
 
 
             /* =================================================
-               NATACIÓN · EVOLUCIÓN
+               NATACIÓN
             ================================================= */
 
             NATACION: [
@@ -1460,48 +1614,10 @@ document.addEventListener(
                 {
 
                     question:
-                        "Cuéntanos un poco sobre tu entrenamiento actual.",
+                        "¿Cuánto nadas aproximadamente en una sesión?",
 
                     description:
-                        "Describe libremente cómo entrenas actualmente, qué haces en tus sesiones o cualquier detalle que consideres importante.",
-
-                    textarea:
-                        true,
-
-                    placeholder:
-                        "Escribe cómo entrenas actualmente, qué haces en tus sesiones o cualquier detalle que quieras compartir."
-
-                },
-
-
-                {
-
-                    question:
-                        "¿Cuántos días a la semana entrenas?",
-
-                    description:
-                        "Indica tu frecuencia habitual de entrenamiento.",
-
-                    options: [
-
-                        "1 día",
-                        "2 días",
-                        "3 días",
-                        "4 días",
-                        "5 días o más"
-
-                    ]
-
-                },
-
-
-                {
-
-                    question:
-                        "¿Qué distancia nadas actualmente por sesión?",
-
-                    description:
-                        "Indica aproximadamente cuánto nadas en una sesión habitual.",
+                        "Indica aproximadamente la distancia que nadas en una sesión habitual.",
 
                     options: [
 
@@ -1519,16 +1635,40 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué buscas principalmente con este programa?",
+                        "¿Qué buscas actualmente?",
 
                     description:
-                        "Cuéntanos qué quieres conseguir o qué te gustaría desarrollar.",
+                        "Selecciona lo que mejor representa lo que quieres trabajar.",
+
+                    options: [
+
+                        "Técnica",
+                        "Resistencia",
+                        "Velocidad",
+                        "Preparación para competencia",
+                        "Otro"
+
+                    ],
+
+                    other:
+                        true
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Cuéntame más de cómo llevas tu entrenamiento? Platiquemos y trabajemos juntos para cumplir tus objetivos.",
+
+                    description:
+                        "Cuéntanos brevemente cómo entrenas actualmente y qué te gustaría conseguir.",
 
                     textarea:
                         true,
 
                     placeholder:
-                        "Escribe principalmente qué buscas con el programa y qué te gustaría conseguir."
+                        "Cuéntame cómo llevas tu entrenamiento, qué haces actualmente y qué te gustaría conseguir."
 
                 }
 
@@ -1537,7 +1677,7 @@ document.addEventListener(
 
 
             /* =================================================
-               NATACIÓN + FUERZA · POTENCIA
+               NATACIÓN + FUERZA
             ================================================= */
 
             NATACION_FUERZA: [
@@ -1545,16 +1685,20 @@ document.addEventListener(
                 {
 
                     question:
-                        "Cuéntanos un poco sobre tu entrenamiento actual.",
+                        "¿Cuánto nadas aproximadamente en una sesión?",
 
                     description:
-                        "Describe libremente cómo entrenas actualmente y qué haces en tus sesiones.",
+                        "Indica aproximadamente la distancia que nadas en una sesión habitual.",
 
-                    textarea:
-                        true,
+                    options: [
 
-                    placeholder:
-                        "Cuéntanos cómo entrenas actualmente y cómo distribuyes tus sesiones."
+                        "Menos de 1,000 m",
+                        "1,000 – 1,500 m",
+                        "1,500 – 2,000 m",
+                        "2,000 – 2,500 m",
+                        "Más de 2,500 m"
+
+                    ]
 
                 },
 
@@ -1562,18 +1706,18 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Cuántos días a la semana entrenas?",
+                        "¿Cómo administrarías tus ejercicios de fuerza con tu rutina actual?",
 
                     description:
-                        "Indica tu frecuencia habitual de entrenamiento.",
+                        "Indica cuántos días podrías dedicar actualmente al trabajo de fuerza.",
 
                     options: [
 
-                        "1 día",
-                        "2 días",
-                        "3 días",
+                        "5 días o más",
                         "4 días",
-                        "5 días o más"
+                        "3 días",
+                        "2 días",
+                        "1 día"
 
                     ]
 
@@ -1583,22 +1727,23 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué buscas principalmente con este programa?",
+                        "¿Qué buscas actualmente?",
 
                     description:
-                        "Selecciona lo que mejor representa lo que quieres desarrollar.",
+                        "Selecciona lo que mejor representa lo que quieres trabajar.",
 
                     options: [
 
-                        "Una estructura semanal clara",
+                        "Técnica",
+                        "Resistencia",
+                        "Velocidad",
+                        "Preparación para competencia",
+                        "Otro"
 
-                        "Correcciones para mejorar mi técnica",
+                    ],
 
-                        "Desarrollar fuerza fuera del agua",
-
-                        "Orientación para avanzar progresivamente"
-
-                    ]
+                    other:
+                        true
 
                 },
 
@@ -1606,16 +1751,16 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué te gustaría mejorar en tu entrenamiento?",
+                        "¿Cuéntame más de cómo llevas tu entrenamiento? Platiquemos y trabajemos juntos para cumplir tus objetivos.",
 
                     description:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+                        "Cuéntanos brevemente cómo entrenas actualmente y qué te gustaría conseguir.",
 
                     textarea:
                         true,
 
                     placeholder:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+                        "Cuéntame cómo llevas tu entrenamiento, qué haces actualmente y qué te gustaría conseguir."
 
                 }
 
@@ -1624,7 +1769,7 @@ document.addEventListener(
 
 
             /* =================================================
-               TERRESTRE · FUERA DEL AGUA
+               HIT + FUERZA
             ================================================= */
 
             TERRESTRE: [
@@ -1632,10 +1777,10 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Cuántos días a la semana entrenas?",
+                        "¿Cuántos días entrenas fuerza actualmente?",
 
                     description:
-                        "Indica tu frecuencia habitual de entrenamiento.",
+                        "Indica cuántos días dedicas actualmente al entrenamiento de fuerza.",
 
                     options: [
 
@@ -1643,7 +1788,8 @@ document.addEventListener(
                         "2 días",
                         "3 días",
                         "4 días",
-                        "5 días o más"
+                        "5 días o más",
+                        "No entreno actualmente"
 
                     ]
 
@@ -1653,39 +1799,22 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Actualmente entrenas o realizas alguna actividad física?",
+                        "¿Qué buscas desarrollar principalmente?",
 
                     description:
-                        "Describe brevemente qué haces actualmente o si actualmente no entrenas.",
-
-                    textarea:
-                        true,
-
-                    placeholder:
-                        "Cuéntanos si actualmente entrenas, qué actividad realizas o si actualmente no entrenas."
-
-                },
-
-
-                {
-
-                    question:
-                        "¿Qué esperas obtener de este programa?",
-
-                    description:
-                        "Selecciona lo que mejor representa lo que buscas.",
+                        "Puedes seleccionar más de una opción.",
 
                     options: [
 
-                        "Una estructura semanal clara",
+                        "Fuerza",
+                        "Resistencia",
+                        "Condición física",
+                        "Rendimiento general"
 
-                        "Desarrollar mi capacidad física",
+                    ],
 
-                        "Mejorar mi condición general",
-
-                        "Orientación para avanzar progresivamente"
-
-                    ]
+                    multi:
+                        true
 
                 },
 
@@ -1693,16 +1822,33 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué te gustaría mejorar?",
+                        "¿Qué es lo que más te cuesta actualmente?",
 
                     description:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+                        "Cuéntanos qué dificultad encuentras actualmente en tu entrenamiento.",
 
                     textarea:
                         true,
 
                     placeholder:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+                        "Cuéntanos qué es lo que más te cuesta actualmente."
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué te gustaría conseguir con este programa?",
+
+                    description:
+                        "Cuéntanos qué te gustaría desarrollar o conseguir.",
+
+                    textarea:
+                        true,
+
+                    placeholder:
+                        "Cuéntanos qué te gustaría conseguir con este programa."
 
                 }
 
@@ -1711,7 +1857,7 @@ document.addEventListener(
 
 
             /* =================================================
-               TERRESTRE · FUERZA
+               FUERZA
             ================================================= */
 
             FUERZA: [
@@ -1719,10 +1865,29 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Cuántos días a la semana entrenas?",
+                        "¿Cuánto tiempo llevas entrenando fuerza?",
 
                     description:
-                        "Indica tu frecuencia habitual de entrenamiento.",
+                        "Selecciona la opción que mejor representa tu experiencia actual.",
+
+                    options: [
+
+                        "Quiero comenzar a fortalecerme con estructura",
+                        "Estoy comenzando",
+                        "Menos de 6 meses"
+
+                    ]
+
+                },
+
+
+                {
+
+                    question:
+                        "¿Cuántos días entrenas fuerza actualmente?",
+
+                    description:
+                        "Indica cuántos días dedicas actualmente al entrenamiento de fuerza.",
 
                     options: [
 
@@ -1730,7 +1895,8 @@ document.addEventListener(
                         "2 días",
                         "3 días",
                         "4 días",
-                        "5 días o más"
+                        "5 días o más",
+                        "Actualmente no entreno"
 
                     ]
 
@@ -1740,39 +1906,40 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué buscas principalmente con este programa?",
+                        "¿Dónde entrenas principalmente?",
 
                     description:
-                        "Cuéntanos qué quieres conseguir o qué te gustaría desarrollar.",
-
-                    textarea:
-                        true,
-
-                    placeholder:
-                        "Escribe principalmente qué buscas con el programa y qué te gustaría conseguir."
-
-                },
-
-
-                {
-
-                    question:
-                        "¿Tienes espacio para entrenar?",
-
-                    description:
-                        "Indica dónde realizarías principalmente tus sesiones.",
+                        "Selecciona dónde realizas principalmente tus sesiones.",
 
                     options: [
 
                         "Casa",
-
                         "Parque",
+                        "Otro"
 
-                        "Deportivo",
+                    ],
 
-                        "Casa y parque",
+                    other:
+                        true
 
-                        "Casa y deportivo"
+                },
+
+
+                {
+
+                    question:
+                        "¿Qué buscas desarrollar principalmente?",
+
+                    description:
+                        "Selecciona lo que mejor representa lo que quieres desarrollar.",
+
+                    options: [
+
+                        "Fuerza para mi día a día",
+                        "Potencia",
+                        "Rendimiento",
+                        "Condición física",
+                        "Mejorar mi estructura de entrenamiento"
 
                     ]
 
@@ -1782,16 +1949,16 @@ document.addEventListener(
                 {
 
                     question:
-                        "¿Qué te gustaría mejorar?",
+                        "¿Qué te gustaría conseguir con tu entrenamiento?",
 
                     description:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar.",
+                        "Cuéntanos qué te gustaría conseguir con tu entrenamiento.",
 
                     textarea:
                         true,
 
                     placeholder:
-                        "Cuéntanos qué quieres trabajar, qué te cuesta actualmente o qué te gustaría desarrollar."
+                        "Cuéntanos qué te gustaría conseguir con tu entrenamiento."
 
                 }
 
@@ -1802,32 +1969,43 @@ document.addEventListener(
 
 
         /* =====================================================
-           ABRIR ENCUESTA DESDE LAS TARJETAS
+           CONSTRUIR FLUJO COMPLETO
         ===================================================== */
 
-        const programCards =
-            document.querySelectorAll(
-                ".nova-program-card[data-program]"
-            );
+        function getCurrentFlow() {
+
+            const flow =
+                [
+                    ...generalQuestions
+                ];
 
 
-        programCards.forEach(
-            function (card) {
+            if (selectedPlan) {
 
-                card.addEventListener(
-                    "click",
-                    function () {
-
-                        const selectedProgram =
-                            card.dataset.program;
-
-
-                        openSurvey(
-                            selectedProgram
-                        );
-
-                    }
+                flow.push(
+                    ...planQuestions[
+                        selectedPlan
+                    ]
                 );
+
+            }
+
+
+            return flow;
+
+        }
+
+
+
+        /* =====================================================
+           INICIAR ENCUESTA
+        ===================================================== */
+
+        startSurvey.addEventListener(
+            "click",
+            function () {
+
+                openSurvey();
 
             }
         );
@@ -1838,12 +2016,7 @@ document.addEventListener(
            ABRIR ENCUESTA
         ===================================================== */
 
-        function openSurvey(
-            selectedProgram
-        ) {
-
-            currentProgram =
-                selectedProgram;
+        function openSurvey() {
 
             currentQuestion =
                 0;
@@ -1851,16 +2024,8 @@ document.addEventListener(
             answers =
                 {};
 
-
-            /*
-             * Guardamos automáticamente
-             * el programa seleccionado.
-             */
-
-            answers.plan =
-                programs[
-                    currentProgram
-                ].selection;
+            selectedPlan =
+                null;
 
 
             survey.style.display =
@@ -1877,6 +2042,16 @@ document.addEventListener(
             );
 
 
+            otherTextareaWrap.classList.remove(
+                "active"
+            );
+
+
+            textareaWrap.classList.remove(
+                "active"
+            );
+
+
             modal.classList.add(
                 "active"
             );
@@ -1886,12 +2061,6 @@ document.addEventListener(
                 "modal-open"
             );
 
-
-            /*
-             * Entramos directamente
-             * a la primera pregunta
-             * del programa elegido.
-             */
 
             renderQuestion();
 
@@ -2014,16 +2183,7 @@ document.addEventListener(
         function renderQuestion() {
 
             const flow =
-                surveyFlows[
-                    currentProgram
-                ];
-
-
-            if (!flow) {
-
-                return;
-
-            }
+                getCurrentFlow();
 
 
             const data =
@@ -2047,21 +2207,23 @@ document.addEventListener(
                 currentQuestion + 1;
 
 
-            const program =
-                programs[
-                    currentProgram
-                ];
-
-
 
             /* =================================================
                HEADER
             ================================================= */
 
             kicker.textContent =
-                program.name.toUpperCase()
-                +
-                " · VALORACIÓN";
+                selectedPlan
+
+                    ? programs[
+                        selectedPlan
+                    ].name.toUpperCase()
+                    +
+                    " · VALORACIÓN"
+
+                    :
+
+                    "NOVA · VALORACIÓN";
 
 
             counter.textContent =
@@ -2101,7 +2263,7 @@ document.addEventListener(
 
 
             description.textContent =
-                data.description;
+                data.description || "";
 
 
 
@@ -2112,20 +2274,33 @@ document.addEventListener(
             options.innerHTML =
                 "";
 
-
             textareaWrap.classList.remove(
+                "active"
+            );
+
+            otherTextareaWrap.classList.remove(
                 "active"
             );
 
 
             textarea.value =
                 answers[
-                    `question_${number}`
+                    `question_${currentQuestion}`
                 ] || "";
 
 
             textareaCount.textContent =
                 textarea.value.length;
+
+
+            otherTextarea.value =
+                answers[
+                    `other_${currentQuestion}`
+                ] || "";
+
+
+            otherTextareaCount.textContent =
+                otherTextarea.value.length;
 
 
             next.disabled =
@@ -2134,7 +2309,7 @@ document.addEventListener(
 
 
             /* =================================================
-               TEXTAREA
+               RESPUESTA ABIERTA
             ================================================= */
 
             if (
@@ -2155,23 +2330,10 @@ document.addEventListener(
                     textarea.value.trim().length < 3;
 
 
-                next.innerHTML =
-                    currentQuestion ===
-                    total - 1
-
-                    ?
-
-                    `
-                    FINALIZAR
-                    <i class="fa-solid fa-check"></i>
-                    `
-
-                    :
-
-                    `
-                    CONTINUAR
-                    <i class="fa-solid fa-arrow-right"></i>
-                    `;
+                updateNextButton(
+                    currentQuestion,
+                    total
+                );
 
 
                 return;
@@ -2183,6 +2345,39 @@ document.addEventListener(
             /* =================================================
                OPCIONES
             ================================================= */
+
+            const savedAnswer =
+                answers[
+                    `question_${currentQuestion}`
+                ];
+
+
+            let selectedValues =
+                [];
+
+
+            if (
+                Array.isArray(
+                    savedAnswer
+                )
+            ) {
+
+                selectedValues =
+                    savedAnswer;
+
+            }
+            else if (
+                savedAnswer
+            ) {
+
+                selectedValues =
+                    [
+                        savedAnswer
+                    ];
+
+            }
+
+
 
             data.options.forEach(
                 function (optionText) {
@@ -2202,18 +2397,14 @@ document.addEventListener(
 
 
                     if (
-                        answers[
-                            `question_${number}`
-                        ] === optionText
+                        selectedValues.includes(
+                            optionText
+                        )
                     ) {
 
                         button.classList.add(
                             "selected"
                         );
-
-
-                        next.disabled =
-                            false;
 
                     }
 
@@ -2231,6 +2422,185 @@ document.addEventListener(
                     button.addEventListener(
                         "click",
                         function () {
+
+
+                            /* =================================
+                               SELECCIÓN MÚLTIPLE
+                            ================================= */
+
+                            if (
+                                data.multi
+                            ) {
+
+                                button.classList.toggle(
+                                    "selected"
+                                );
+
+
+                                const selected =
+                                    Array.from(
+                                        options.querySelectorAll(
+                                            ".program-option.selected"
+                                        )
+                                    ).map(
+                                        function (item) {
+
+                                            return item
+                                                .querySelector(
+                                                    "span"
+                                                )
+                                                .textContent;
+
+                                        }
+                                    );
+
+
+                                answers[
+                                    `question_${currentQuestion}`
+                                ] =
+                                    selected;
+
+
+                                /*
+                                 * Si se selecciona
+                                 * "Actualmente no..."
+                                 * quitamos las demás.
+                                 */
+
+                                if (
+                                    optionText ===
+                                    "Actualmente no realizo entrenamiento"
+                                ) {
+
+                                    if (
+                                        button.classList.contains(
+                                            "selected"
+                                        )
+                                    ) {
+
+                                        options
+                                            .querySelectorAll(
+                                                ".program-option"
+                                            )
+                                            .forEach(
+                                                function (item) {
+
+                                                    if (
+                                                        item !==
+                                                        button
+                                                    ) {
+
+                                                        item.classList.remove(
+                                                            "selected"
+                                                        );
+
+                                                    }
+
+                                                }
+                                            );
+
+
+                                        answers[
+                                            `question_${currentQuestion}`
+                                        ] =
+                                            [
+                                                optionText
+                                            ];
+
+                                    }
+
+                                }
+
+
+                                /*
+                                 * Si se selecciona otra opción,
+                                 * quitamos "Actualmente no..."
+                                 */
+
+                                if (
+                                    optionText !==
+                                    "Actualmente no realizo entrenamiento"
+                                    &&
+                                    button.classList.contains(
+                                        "selected"
+                                    )
+                                ) {
+
+                                    const noTraining =
+                                        Array.from(
+                                            options.querySelectorAll(
+                                                ".program-option"
+                                            )
+                                        ).find(
+                                            function (item) {
+
+                                                return item
+                                                    .querySelector(
+                                                        "span"
+                                                    )
+                                                    .textContent
+                                                    ===
+                                                    "Actualmente no realizo entrenamiento";
+
+                                            }
+                                        );
+
+
+                                    if (
+                                        noTraining
+                                    ) {
+
+                                        noTraining.classList.remove(
+                                            "selected"
+                                        );
+
+                                    }
+
+
+                                    const current =
+                                        answers[
+                                            `question_${currentQuestion}`
+                                        ] || [];
+
+
+                                    answers[
+                                        `question_${currentQuestion}`
+                                    ] =
+                                        current.filter(
+                                            function (item) {
+
+                                                return item !==
+                                                    "Actualmente no realizo entrenamiento";
+
+                                            }
+                                        );
+
+                                }
+
+
+                                /*
+                                 * Validación
+                                 */
+
+                                const finalSelection =
+                                    answers[
+                                        `question_${currentQuestion}`
+                                    ] || [];
+
+
+                                next.disabled =
+                                    finalSelection.length === 0;
+
+
+                                return;
+
+                            }
+
+
+
+                            /* =================================
+                               SELECCIÓN ÚNICA
+                            ================================= */
 
                             options
                                 .querySelectorAll(
@@ -2253,13 +2623,85 @@ document.addEventListener(
 
 
                             answers[
-                                `question_${number}`
+                                `question_${currentQuestion}`
                             ] =
                                 optionText;
 
 
                             next.disabled =
                                 false;
+
+
+
+                            /* =================================
+                               PLAN
+                            ================================= */
+
+                            if (
+                                data.planSelection
+                            ) {
+
+                                const planMap = {
+
+                                    "Natación":
+                                        "NATACION",
+
+                                    "Natación + Fuerza":
+                                        "NATACION_FUERZA",
+
+                                    "HIT + Fuerza":
+                                        "TERRESTRE",
+
+                                    "Fuerza":
+                                        "FUERZA"
+
+                                };
+
+
+                                selectedPlan =
+                                    planMap[
+                                        optionText
+                                    ];
+
+
+                                /*
+                                 * Al elegir el plan
+                                 * se actualiza inmediatamente
+                                 * el flujo.
+                                 */
+
+                                answers.plan =
+                                    selectedPlan;
+
+                            }
+
+
+
+                            /* =================================
+                               OTRO
+                            ================================= */
+
+                            if (
+                                data.other &&
+                                optionText === "Otro"
+                            ) {
+
+                                otherTextareaWrap.classList.add(
+                                    "active"
+                                );
+
+
+                                next.disabled =
+                                    otherTextarea.value.trim().length < 3;
+
+                            }
+                            else {
+
+                                otherTextareaWrap.classList.remove(
+                                    "active"
+                                );
+
+                            }
 
                         }
                     );
@@ -2275,33 +2717,82 @@ document.addEventListener(
 
 
             /* =================================================
+               RESTAURAR OTRO
+            ================================================= */
+
+            if (
+                data.other &&
+                selectedValues.includes(
+                    "Otro"
+                )
+            ) {
+
+                otherTextareaWrap.classList.add(
+                    "active"
+                );
+
+
+                next.disabled =
+                    otherTextarea.value.trim().length < 3;
+
+            }
+            else if (
+                !data.other
+            ) {
+
+                otherTextareaWrap.classList.remove(
+                    "active"
+                );
+
+            }
+
+
+
+            /* =================================================
                BOTÓN
             ================================================= */
 
-            next.innerHTML =
-                currentQuestion ===
-                total - 1
-
-                ?
-
-                `
-                FINALIZAR
-                <i class="fa-solid fa-check"></i>
-                `
-
-                :
-
-                `
-                CONTINUAR
-                <i class="fa-solid fa-arrow-right"></i>
-                `;
+            updateNextButton(
+                currentQuestion,
+                total
+            );
 
         }
 
 
 
         /* =====================================================
-           TEXTAREA
+           BOTÓN CONTINUAR / FINALIZAR
+        ===================================================== */
+
+        function updateNextButton(
+            index,
+            total
+        ) {
+
+            next.innerHTML =
+                index === total - 1
+
+                    ?
+
+                    `
+                    FINALIZAR
+                    <i class="fa-solid fa-check"></i>
+                    `
+
+                    :
+
+                    `
+                    CONTINUAR
+                    <i class="fa-solid fa-arrow-right"></i>
+                    `;
+
+        }
+
+
+
+        /* =====================================================
+           TEXTAREA PRINCIPAL
         ===================================================== */
 
         textarea.addEventListener(
@@ -2317,13 +2808,61 @@ document.addEventListener(
 
 
                 answers[
-                    `question_${currentQuestion + 1}`
+                    `question_${currentQuestion}`
                 ] =
                     value;
 
 
                 next.disabled =
                     value.trim().length < 3;
+
+            }
+        );
+
+
+
+        /* =====================================================
+           TEXTAREA · OTRO
+        ===================================================== */
+
+        otherTextarea.addEventListener(
+            "input",
+            function () {
+
+                const value =
+                    otherTextarea.value;
+
+
+                otherTextareaCount.textContent =
+                    value.length;
+
+
+                answers[
+                    `other_${currentQuestion}`
+                ] =
+                    value;
+
+
+                const selected =
+                    answers[
+                        `question_${currentQuestion}`
+                    ];
+
+
+                if (
+                    selected === "Otro"
+                    ||
+                    (
+                        Array.isArray(selected)
+                        &&
+                        selected.includes("Otro")
+                    )
+                ) {
+
+                    next.disabled =
+                        value.trim().length < 3;
+
+                }
 
             }
         );
@@ -2338,38 +2877,117 @@ document.addEventListener(
             "click",
             function () {
 
-                if (
-                    !currentProgram
-                ) {
-
-                    return;
-
-                }
-
-
                 const flow =
-                    surveyFlows[
-                        currentProgram
+                    getCurrentFlow();
+
+
+                const data =
+                    flow[
+                        currentQuestion
                     ];
 
 
                 const answer =
                     answers[
-                        `question_${currentQuestion + 1}`
+                        `question_${currentQuestion}`
                     ];
 
 
 
                 /* =================================================
-                   VALIDAR
+                   VALIDAR RESPUESTA
                 ================================================= */
 
                 if (
-                    !answer ||
-                    !String(answer).trim()
+                    data.textarea
                 ) {
 
-                    return;
+                    if (
+                        !answer ||
+                        !String(answer).trim()
+                    ) {
+
+                        return;
+
+                    }
+
+                }
+                else if (
+                    data.multi
+                ) {
+
+                    if (
+                        !Array.isArray(answer)
+                        ||
+                        answer.length === 0
+                    ) {
+
+                        return;
+
+                    }
+
+                }
+                else {
+
+                    if (
+                        !answer ||
+                        !String(answer).trim()
+                    ) {
+
+                        return;
+
+                    }
+
+                }
+
+
+
+                /* =================================================
+                   VALIDAR OTRO
+                ================================================= */
+
+                if (
+                    data.other
+                ) {
+
+                    const selected =
+                        answer;
+
+
+                    const hasOther =
+                        selected === "Otro"
+                        ||
+                        (
+                            Array.isArray(
+                                selected
+                            )
+                            &&
+                            selected.includes(
+                                "Otro"
+                            )
+                        );
+
+
+                    if (
+                        hasOther
+                    ) {
+
+                        const otherValue =
+                            answers[
+                                `other_${currentQuestion}`
+                            ];
+
+
+                        if (
+                            !otherValue ||
+                            !otherValue.trim()
+                        ) {
+
+                            return;
+
+                        }
+
+                    }
 
                 }
 
@@ -2413,7 +3031,7 @@ document.addEventListener(
 
             const program =
                 programs[
-                    currentProgram
+                    selectedPlan
                 ];
 
 
@@ -2432,7 +3050,9 @@ document.addEventListener(
 
 
             recommendedProgram.textContent =
-                program.name;
+                program
+                    ? program.name
+                    : "—";
 
 
             resultTitle.textContent =
@@ -2456,14 +3076,15 @@ document.addEventListener(
 
                 const program =
                     programs[
-                        currentProgram
+                        selectedPlan
                     ];
 
 
-                const flow =
-                    surveyFlows[
-                        currentProgram
-                    ];
+                if (!program) {
+
+                    return;
+
+                }
 
 
                 let message =
@@ -2484,18 +3105,62 @@ ${program.discipline}
 `;
 
 
-                flow.forEach(
+                /*
+                 * Preguntas generales
+                 */
+
+                generalQuestions.forEach(
                     function (item, index) {
 
                         const answer =
                             answers[
-                                `question_${index + 1}`
-                            ] || "";
+                                `question_${index}`
+                            ];
 
 
-                        if (!answer) {
+                        if (
+                            !answer
+                        ) {
 
                             return;
+
+                        }
+
+
+                        let formattedAnswer =
+                            Array.isArray(answer)
+
+                                ? answer.join(", ")
+
+                                : answer;
+
+
+                        const other =
+                            answers[
+                                `other_${index}`
+                            ];
+
+
+                        if (
+                            other
+                            &&
+                            (
+                                answer === "Otro"
+                                ||
+                                (
+                                    Array.isArray(
+                                        answer
+                                    )
+                                    &&
+                                    answer.includes(
+                                        "Otro"
+                                    )
+                                )
+                            )
+                        ) {
+
+                            formattedAnswer +=
+                                ` — ${other}`;
 
                         }
 
@@ -2503,12 +3168,100 @@ ${program.discipline}
                         message +=
 `
 ${item.question}
-${answer}
+${formattedAnswer}
 
 `;
 
                     }
                 );
+
+
+
+                /*
+                 * Preguntas específicas
+                 */
+
+                const specificQuestions =
+                    planQuestions[
+                        selectedPlan
+                    ] || [];
+
+
+                const generalLength =
+                    generalQuestions.length;
+
+
+                specificQuestions.forEach(
+                    function (item, index) {
+
+                        const questionIndex =
+                            generalLength +
+                            index;
+
+
+                        const answer =
+                            answers[
+                                `question_${questionIndex}`
+                            ];
+
+
+                        if (
+                            !answer
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        let formattedAnswer =
+                            Array.isArray(answer)
+
+                                ? answer.join(", ")
+
+                                : answer;
+
+
+                        const other =
+                            answers[
+                                `other_${questionIndex}`
+                            ];
+
+
+                        if (
+                            other
+                            &&
+                            (
+                                answer === "Otro"
+                                ||
+                                (
+                                    Array.isArray(
+                                        answer
+                                    )
+                                    &&
+                                    answer.includes(
+                                        "Otro"
+                                    )
+                                )
+                            )
+                        ) {
+
+                            formattedAnswer +=
+                                ` — ${other}`;
+
+                        }
+
+
+                        message +=
+`
+${item.question}
+${formattedAnswer}
+
+`;
+
+                    }
+                );
+
 
 
                 message +=
