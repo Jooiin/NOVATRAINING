@@ -37,6 +37,9 @@ html::-webkit-scrollbar-thumb:hover {
 ========================================================= */
 
 :root {
+    --blue: #00bfff;
+    --radius: 1px;
+
     width: 100%;
     min-width: 0;
     min-height: 100vh;
@@ -56,7 +59,6 @@ html::-webkit-scrollbar-thumb:hover {
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-
     overflow-x: hidden;
 }
 
@@ -81,27 +83,30 @@ html {
 }
 
 body {
-    width: 100%;
-    min-width: 0;
-    min-height: 100vh;
+    width:100%;
+    min-height:100vh;
 
-    background: #08090b;
-    color: #ffffff;
+    overflow-x:hidden;
+
+    background:var(--black);
+    color:var(--white);
 
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "SF Pro Display",
-        "SF Pro",
+        "Inter",
         "Segoe UI",
-        Roboto,
-        Inter,
+        Helvetica,
+        Arial,
         sans-serif;
 
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    letter-spacing:-.02em;
 
-    overflow-x: hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+    text-rendering:optimizeLegibility;
 }
 
 body.modal-open {
@@ -147,8 +152,7 @@ a {
 
     padding: 21px 7%;
 
-    background:
-        rgba(5,5,5,.72);
+    background: rgba(5,5,5,.72);
 
     border-bottom:
         1px solid rgba(255,255,255,.065);
@@ -172,12 +176,11 @@ a {
 
     font-size: 15px;
     font-weight: 700;
-
     line-height: 1;
+
     letter-spacing: 1.5px;
 
     text-decoration: none !important;
-
     cursor: pointer;
 }
 
@@ -190,8 +193,8 @@ a {
 
     font-size: 8px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 3px;
 }
 
@@ -223,7 +226,6 @@ nav a {
 
     font-size: 12px;
     font-weight: 400;
-
     line-height: 1;
 
     opacity: .72;
@@ -304,10 +306,9 @@ main {
 
     font-size: 10px;
     font-weight: 600;
-
     line-height: 1.2;
-    letter-spacing: 3px;
 
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
@@ -320,8 +321,8 @@ main {
         clamp(44px, 5.5vw, 72px);
 
     font-weight: 600;
-
     line-height: 1.02;
+
     letter-spacing: -.055em;
 
     text-wrap: balance;
@@ -334,8 +335,8 @@ main {
 
     font-size: 16px;
     font-weight: 400;
-
     line-height: 1.8;
+
     letter-spacing: -.012em;
 
     text-wrap: pretty;
@@ -470,6 +471,7 @@ main {
     min-height: 24px;
 
     margin-bottom: 23px;
+
     padding: 0 11px;
 
     border:
@@ -486,8 +488,8 @@ main {
 
     font-size: 8px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 1.7px;
 }
 
@@ -512,8 +514,8 @@ main {
 
     font-size: 9px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 2px;
 }
 
@@ -523,12 +525,11 @@ main {
 
     font-size: 9px;
     font-weight: 500;
-
     line-height: 1;
+
     letter-spacing: 1.3px;
 
     text-transform: uppercase;
-
     text-align: right;
 }
 
@@ -546,8 +547,8 @@ main {
         clamp(30px, 3vw, 42px);
 
     font-weight: 600;
-
     line-height: 1.04;
+
     letter-spacing: -.045em;
 }
 
@@ -559,7 +560,6 @@ main {
 
     font-size: 14px;
     font-weight: 500;
-
     line-height: 1.5;
 }
 
@@ -573,7 +573,6 @@ main {
 
     font-size: 13px;
     font-weight: 400;
-
     line-height: 1.8;
 }
 
@@ -620,8 +619,8 @@ main {
 
     font-size: 8px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 1.6px;
 }
 
@@ -631,7 +630,6 @@ main {
 
     font-size: 11px;
     font-weight: 500;
-
     line-height: 1.35;
 }
 
@@ -669,7 +667,6 @@ main {
         var(--blue);
 
     font-size: 8px;
-
     letter-spacing: 4px;
 }
 
@@ -699,8 +696,8 @@ main {
 
     font-size: 8px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 1.7px;
 }
 
@@ -709,8 +706,8 @@ main {
 
     font-size: 28px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: -.035em;
 }
 
@@ -751,8 +748,8 @@ main {
 
     font-size: 10px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 1.5px;
 
     cursor: pointer;
@@ -980,7 +977,6 @@ footer {
 
     font-size: 18px;
     font-weight: 300;
-
     line-height: 1;
 
     cursor: pointer;
@@ -1073,8 +1069,8 @@ footer {
 
     font-size: 13px;
     font-weight: 400;
-
     line-height: 1.75;
+
     letter-spacing: -.008em;
 }
 
@@ -1093,10 +1089,9 @@ footer {
 
     font-size: 8px;
     font-weight: 600;
-
     line-height: 1.2;
-    letter-spacing: 2.5px;
 
+    letter-spacing: 2.5px;
     text-transform: uppercase;
 }
 
@@ -1115,8 +1110,8 @@ footer {
         clamp(32px, 5vw, 42px);
 
     font-weight: 600;
-
     line-height: 1.02;
+
     letter-spacing: -.05em;
 }
 
@@ -1200,8 +1195,8 @@ footer {
 
     font-size: 17px;
     font-weight: 500;
-
     line-height: 1.2;
+
     letter-spacing: -.025em;
 }
 
@@ -1223,7 +1218,6 @@ footer {
         rgba(255,255,255,.48);
 
     font-size: 12px;
-
     line-height: 1.65;
 }
 
@@ -1405,8 +1399,8 @@ footer {
 
     font-size: 9px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 2.3px;
 }
 
@@ -1416,8 +1410,8 @@ footer {
 
     font-size: 9px;
     font-weight: 600;
-
     line-height: 1;
+
     letter-spacing: 1.4px;
 }
 
@@ -1428,7 +1422,6 @@ footer {
 
 .program-survey-progress {
     width: 100%;
-
     height: 2px;
 
     margin-bottom: 42px;
@@ -1482,8 +1475,8 @@ footer {
         clamp(28px,4vw,40px);
 
     font-weight: 600;
-
     line-height: 1.08;
+
     letter-spacing: -.045em;
 }
 
@@ -1496,7 +1489,6 @@ footer {
         rgba(255,255,255,.43);
 
     font-size: 13px;
-
     line-height: 1.75;
 }
 
@@ -1516,7 +1508,6 @@ footer {
 
 .program-option {
     width: 100%;
-
     min-height: 58px;
 
     display: flex;
@@ -1636,9 +1627,7 @@ footer {
         rgba(255,255,255,.85);
 
     font-family: inherit;
-
     font-size: 13px;
-
     line-height: 1.7;
 
     transition:
@@ -1678,7 +1667,6 @@ footer {
 
 .program-survey-next {
     width: 100%;
-
     min-height: 50px;
 
     display: flex;
@@ -1792,8 +1780,8 @@ footer {
         clamp(30px,4vw,42px);
 
     font-weight: 600;
-
     line-height: 1.05;
+
     letter-spacing: -.045em;
 }
 
@@ -1807,7 +1795,6 @@ footer {
         rgba(255,255,255,.45);
 
     font-size: 13px;
-
     line-height: 1.75;
 }
 
@@ -1838,7 +1825,6 @@ footer {
 
 .program-recommendation.active {
     display: flex;
-
     flex-direction: column;
 
     gap: 8px;
@@ -1869,7 +1855,6 @@ footer {
 
 .program-whatsapp {
     width: 100%;
-
     min-height: 52px;
 
     display: flex;
@@ -1940,6 +1925,7 @@ footer {
     }
 
     /* SEPARACIÓN ENTRE PLANES */
+
     .nova-program-grid {
         gap: 24px;
     }
@@ -2632,4 +2618,139 @@ footer {
         transition:
             none !important;
     }
+}
+/* =========================================================
+   BOTÓN COMENZAR — MISMO ESTILO QUE VOLVER
+========================================================= */
+
+.program-return .btn-comenzar {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    min-width: 120px;
+    height: 42px;
+    min-height: 42px;
+
+    padding: 0 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER — COMENZAR
+========================================================= */
+
+.program-return .btn-comenzar:hover {
+
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(255, 255, 255, 0.22);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.program-return .btn-comenzar:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.program-return .btn-comenzar:focus-visible {
+
+    outline: none;
+
+    border-color:
+        rgba(255, 255, 255, 0.30);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.06);
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .program-return .btn-comenzar {
+
+        width: 120px;
+        min-width: 120px;
+        height: 42px;
+        min-height: 42px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH — SIN EFECTO HOVER
+========================================================= */
+
+@media (hover: none) {
+
+    .program-return .btn-comenzar:hover {
+
+        transform: none;
+
+        border-color:
+            rgba(255, 255, 255, 0.12);
+
+        background:
+            rgba(255, 255, 255, 0.035);
+
+        color:
+            rgba(255, 255, 255, 0.72);
+
+    }
+
 }
